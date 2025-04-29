@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    char a, b, test;
+    char *pa{&a};
+    char *pb{&b};
+    cout<<"Enter char a: "; cin>> a;
+    cout<<"Enter char b: "; cin>> b;
+    cout<<"Enter new char a: "; cin>> *pa;
+    test = *pa;
+    *pa = *pb; //играем со значениями только
+    *pb = test;
+    cout<<"Total a: "<<a<<endl;
+    cout<<"Total b: "<<b;
+
+    return 0;
+}
