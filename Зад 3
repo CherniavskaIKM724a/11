@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    srand(time(0));
+    int din, set1, positive=0, sum = 0, nminset=-1;
+    cout<< "Enter number of elements: "; cin>>din;
+    cout<< "Enter set: "; cin>>set1;
+    int *p_arr = new int[din];
+
+    for (int i=0; i < din; i++)
+        {
+            p_arr[i] = rand() % 21 - 10;
+            cout << p_arr[i] << " ";
+            if(p_arr[i]<set1){nminset=i;}
+            if(p_arr[i]>0) {
+                    ++positive;
+                    if(p_arr[i]>3) sum += p_arr[i];
+            }
+
+        }
+
+    cout<<endl<<  "Number of the last element that is smaller than the specified set number: "<< nminset<< endl;
+    cout<< "Number of positive elements: "<< positive<< endl;
+    cout<< "The sum of the elements is greater than 3: "<< sum;
+    delete[] p_arr;
+    return 0;
+}
