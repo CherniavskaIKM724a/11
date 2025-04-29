@@ -17,7 +17,8 @@ int main()
     *pb = test;
     cout<<"Total a: "<<a<<endl;
     cout<<"Total b: "<<b;
-    delete pa, pb;
+    delete pa;
+    delete pb;
    
     return 0;
 }
